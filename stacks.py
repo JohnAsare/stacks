@@ -27,3 +27,13 @@ class Stack:
         return len(self.items)
 
 
+s = Stack()
+s.push(1)
+s.push(12)
+s.push("dog")
+s.pop()
+
+print(s.size())
+print(s.peek())
+
+
