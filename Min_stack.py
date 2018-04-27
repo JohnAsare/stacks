@@ -26,7 +26,7 @@ class MinStack:
         if item < 0:
             self.min = self.min - item
 
-    def top(self):
+
 
 
 
