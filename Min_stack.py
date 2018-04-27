@@ -20,5 +20,6 @@ class MinStack:
     def top(self):
         return self.lyst[len(self.lyst - 1)]
 
+sddsf
 
 
