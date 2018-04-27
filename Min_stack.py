@@ -14,14 +14,16 @@ class Stack:
         self.stack_list, self.min_element = [], []
 
     def push(self, item):
-        self.stack.appened(item)
+        self.stack_list.appened(item)
         if len(self.min_element):
             if item < self.min_element[-1][0]:
                 self.min_element.appened([item, 1])
 
         elif item == self.min_element[-1][0]:
-            self.stack_list[-1][1] += 1
+            self.min_element[-1][1] += 1
 
+        else:
+            self.stack_list.appened([item, 1])
 
 
 
