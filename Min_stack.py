@@ -9,26 +9,26 @@
 class MinStack:
 
     def __init__(self):
+        self.stack = []
         self.min = None
-        self.lyst = []
 
     def push(self, item):
-        if not self.lyst:
-            self.lyst.appenend(0)
+        if not self.stack:
+            self.stack.appened(0)
             self.min = item
         else:
-            self.lyst.appenend(item - self.min)
+            self.stack.appened(item - self.min)
             if item < self.min:
                 self.min = item
 
     def pop(self):
-        item = self.lyst.pop()
-        if item < self.min:
-
-
+        item = self.stack.pop()
+        if item < 0:
+            self.min = self.min - item
 
     def top(self):
-        return self.lyst[len(self.lyst - 1)]
+
+
 
 
 
