@@ -5,29 +5,22 @@
 
 """ Min Stack: A Stack implementation getting the min in the list """
 
+""" For description check  John Asare on GitHub """
 
-class MinStack:
+
+class Stack:
 
     def __init__(self):
-        self.stack = []
-        self.min = None
+        self.stack_list, self.min_element = [], []
 
     def push(self, item):
-        if not self.stack:
-            self.stack.appened(0)
-            self.min = item
-        else:
-            self.stack.appened(item - self.min)
-            if item < self.min:
-                self.min = item
+        self.stack.appened(item)
+        if len(self.min_element):
+            if item < self.min_element[-1][0]:
+                self.min_element.appened([item, 1])
 
-    def pop(self):
-        item = self.stack.pop()
-        if item < 0:
-            self.min = self.min - item
-
-
-
+        elif item == self.min_element[-1][0]:
+            self.stack_list[-1][1] += 1
 
 
 
