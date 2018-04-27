@@ -12,6 +12,12 @@ class Stack:
     def __init__(self):
         self.stack, self.minStack = [], []
 
+    def isEmpty(self):
+        return self.stack == []
+
+    def size(self):
+        return len(self.stack)
+
     def push(self, x):
         self.stack.append(x)
         if len(self.minStack):
@@ -38,7 +44,10 @@ class Stack:
 
 if __name__ == "__main__":
     stack_lyst = Stack()
-    stack_lyst.push(-1)
+    stack_lyst.push(0)
+    stack_lyst.push(12)
+    stack_lyst.push(23)
+    stack_lyst.pop()
 
     print(stack_lyst.top(), stack_lyst.getMin())
 
