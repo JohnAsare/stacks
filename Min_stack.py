@@ -49,7 +49,7 @@ if __name__ == "__main__":
     stack_lyst.push(23)
     stack_lyst.pop()
 
-    print(stack_lyst.top(), stack_lyst.getMin())
+    print(stack_lyst.top(), '\n', stack_lyst.getMin(), '\n', stack_lyst.isEmpty(), '\n', stack_lyst.size())
 
 
 
