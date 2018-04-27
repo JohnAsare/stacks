@@ -9,35 +9,31 @@
 
 
 class Stack:
-
     def __init__(self):
-        self.stack_list, self.min_element = [], []
+        self.stack, self.minStack = [], []
 
-    def push(self, item):
-        self.stack_list.append(item)
-        if len(self.min_element):
-            if item < self.min_element[-1][0]:
-                self.min_element.append([item, 1])
-
-        elif item == self.min_element[-1][0]:
-            self.min_element[-1][1] += 1
-
+    def push(self, x):
+        self.stack.append(x)
+        if len(self.minStack):
+            if x < self.minStack[-1][0]:
+                self.minStack.append([x, 1])
+            elif x == self.minStack[-1][0]:
+                self.minStack[-1][1] += 1
         else:
-            self.stack_list.append([item, 1])
+            self.minStack.append([x, 1])
 
     def pop(self):
-        smallest_item = self.stack_list.pop()
-        if smallest_item == self.min_element[-1][0]:
-            self.min_element[-1][1] -= 1
+        x = self.stack.pop()
+        if x == self.minStack[-1][0]:
+            self.minStack[-1][1] -= 1
+            if self.minStack[-1][1] == 0:
+                self.minStack.pop()
 
-            if self.min_element[-1][1] == 0:
-                self.min_element.pop()
-
-    def peek(self):
-        return self.stack_list[-1]
+    def top(self):
+        return self.stack[-1]
 
     def getMin(self):
-        return self.min_element[-1][0]
+        return self.minStack[-1][0]
 
 
 if __name__ == "__main__":
