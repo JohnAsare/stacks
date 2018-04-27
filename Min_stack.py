@@ -22,7 +22,10 @@ class MinStack:
                 self.min = item
 
     def pop(self):
-        return self.lyst.pop()
+        item = self.lyst.pop()
+        if item < self.min:
+
+
 
     def top(self):
         return self.lyst[len(self.lyst - 1)]
